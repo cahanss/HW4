@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Welcome to the currency converter</title>
+    </h:head>
+    <h:body>
+        <h1>Welcome to the currency converter</h1>
+
+        <h:form>
+            <h3>Choose currency</h3>
+            <p>    
+                <h:outputLabel for="conversionAmount" value="Enter amount to be converted: "/>
+                <h:inputText id="conversionAmount" value="#{converterView.conversionAmount}"/>
+            </p>
+            <p> 
+                <h:outputLabel for="convertFrom" value="Choose currency to convert from "/>
+                <h:selectOneMenu value="#{converterView.convertFrom}">
+                    <f:selectItem itemValue="Swedish krona" itemLabel="Swedish krona" />
+                    <f:selectItem itemValue="Euro" itemLabel="Euro" />
+                    <f:selectItem itemValue="USA dollar" itemLabel="USA dollar" />
+                    <f:selectItem itemValue="UK pound" itemLabel="UK pound" />
+                 </h:selectOneMenu>
+            </p>
+            <p> 
+                <h:outputLabel for="convertTo" value="Choose currency to convert to "/>
+                <h:selectOneMenu value="#{converterView.convertTo}">
+                    <f:selectItem itemValue="Swedish krona" itemLabel="Swedish krona" />
+                    <f:selectItem itemValue="Euro" itemLabel="Euro" />
+                    <f:selectItem itemValue="USA dollar" itemLabel="USA dollar" />
+                    <f:selectItem itemValue="UK pound" itemLabel="UK pound" />
+                 </h:selectOneMenu>
+            </p>
+            
+            <p>
+                <h:commandButton value="convert" action="#{converterView.convert}"/>
+            </p>
+            <p>
+            <h:outputLabel for="convertedAmount"  value="Converted amount: "/>
+            <h:outputText id="convertedAmount" value="#{converterView.convertedAmount}"/>
+
+            </p>
+        </h:form>
+
+    </h:body>
+</html>
+
